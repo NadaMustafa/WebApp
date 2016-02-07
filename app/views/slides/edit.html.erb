@@ -1,0 +1,8 @@
+<h1>Edit Lecture</h1>
+<%= simple_form_for @slide, :html =>{:multipart => true} do |f| %>
+  <%= f.select :course_id, @courses %>
+
+  <%= f.input :Title %>
+  <%= f.input :Instructor %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,8 @@
+<%= simple_form_for @slide, :html =>{:multipart=>true} do |f| %>
+<%= select_tag(:course_id, options_for_select(@courses), :prompt=>"Select the course")%>
+
+  <%= f.input :Course, label:"Course name" %>
+  <%= f.input :Title %>
+  <%= f.input :Instructor %>
+  <%= f.button :submit %>
+<% end %>

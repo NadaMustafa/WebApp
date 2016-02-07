@@ -28,7 +28,7 @@
 <ul class="dropdown-menu" role="menu">
 <% Course.all.each do |course| %>
 <li class="<%= 'active' if params[:course] == course.name %>">
-<%= link_to course.name, slides_path(course: course.name), class: "link" %></li>
+<%= link_to course.name, books_path(course: course.name), class: "link" %></li>
 <% end %>
 </ul>
 </li>
