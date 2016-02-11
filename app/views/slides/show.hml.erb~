@@ -1,5 +1,0 @@
-<h2><%= @slide.Title%> </h2>
-<h3><%= @slide.Course%></h3>
-<p><%=@slide.Instructor%></p>
-<%= link_to "Edit", edit_slide_path(@slide)%>
-<%= link_to "Delete", slide_path(@slide), method :delete, data: {confirm: "Are you sure?"}%>

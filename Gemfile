@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
-
+gem 'rmagick'
+gem 'grim'
+gem 'carrierwave', '~> 0.9'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'acts_as_commentable'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record

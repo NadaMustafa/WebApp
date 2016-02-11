@@ -1,0 +1,16 @@
+
+  <img src="<%=@page.path%>">
+<%=@page.votes_for.size%>
+<%if current_user.voted_for? @page%>
+  		<%= link_to "unlike", like_page_path(@page), method: :put %>
+  	<%else%>
+  		<%= link_to "like", like_page_path(@page), method: :put %>
+  	<%end%>	
+
+  	<%@page.comments.recent.limit(10).all.each do|c|%>
+		<div> <%= c.title%></div>
+		<div> <%= c.comment%></div>
+
+
+  	<%end%>
+  	<%=render(:partial=>'form',:locals=>{:page=>@page})%>

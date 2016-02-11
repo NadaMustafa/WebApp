@@ -1,0 +1,7 @@
+<h2>Comments</h2>
+
+<%= form_tag(comment_page_path(page)) do -%>
+	<%=text_field_tag 'title',nil,placeholder: 'Enter title...'%>
+<%=text_area_tag 'comment',nil,placeholder: 'Enter comment...'%>
+  	<div><%= submit_tag 'Save' %></div>
+<% end -%>

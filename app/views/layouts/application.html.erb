@@ -2,47 +2,39 @@
 <html>
 <head>
   <title>CSE</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<% if user_signed_in?%>
+	
  
 <nav class="navbar navbar-default">
  <div class="container">
  <div class="navbar-header">
-<%= link_to "Slides", root_path, class:"navbar-brand"%>
+<%= link_to "Slides", resumes_path, class:"navbar-brand"%>
 
 <ul class="nav navbar-nav">
-<li><%= link_to "Sign up", new_user_registration_path%></li>
-<% if user_signed_in?%>
+
+
 <li><%= link_to "Sign out", destroy_user_session_path,method: :delete %></li>
-<% else %>
-<li><%= link_to "Log in", new_user_session_path %></li>
-<%end%>
+
 </ul>
 
 <ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Courses <span class="caret"></span></a>
-<ul class="dropdown-menu" role="menu">
-<% Course.all.each do |course| %>
-<li class="<%= 'active' if params[:course] == course.name %>">
-<%= link_to course.name, slides_path(course: course.name), class: "link" %></li>
-<% end %>
-</ul>
-</li>
 
-<% if user_signed_in?%>
-<li><%= link_to "Add lecture", new_slide_path %></li>
-<%end%>
+
+
+<li><%= link_to "New File", new_resume_path %></li>
+
 </ul>
 </div>
 </div>
 </nav>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-
+<%end%>
 <%= yield %>
 
 </body>

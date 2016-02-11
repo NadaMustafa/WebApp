@@ -1,0 +1,6 @@
+<%=@resume.name%>
+<%@resume.pages.each do|p|%>
+<a href="<%=page_path(p.id)%>">
+  <img src="<%=p.path%>" style="width:100px;height:150px;border:30;">
+</a>
+<%end%>

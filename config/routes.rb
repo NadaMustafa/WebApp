@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
+  
+
   devise_for :users
-  resources:slides
-  root 'slides#index'
+  
+  root 'resumes#index'
+  resources :resumes, only: [:index, :new, :create, :destroy, :show]
+  get 'page/:id'=>'page#image', as: :page
+
+  resources :pages do
+    member do
+      put "like", to: "page#like",as: :like
+      post "comment", to: "page#comment",as: :comment
+      
+    end
+  end
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
